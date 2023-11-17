@@ -66,6 +66,13 @@ function calculate() {
   operationArray.push(numbers);
   //Se realiza la operacion segun operador indicado
   if (operationArray[1] == "÷") {
+    if (operationArray[2] == 0) {
+      displayDiv.innerText = "Error";
+      operationArray = [];
+      num = "";
+      numbers = 0;
+      return;
+    }
     result = operationArray[0] / operationArray[2];
     updateValues(result);
   } else if (operationArray[1] == "+") {
